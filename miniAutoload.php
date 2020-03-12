@@ -1,4 +1,4 @@
 <?php
-require 'Objects/Zilingo.php';
-require 'Objects/Product_Object.php';
-require 'Objects/Products_Object.php';
+require 'src/Zilingo.php';
+require 'src/Product_Object.php';
+require 'src/Products_Object.php';

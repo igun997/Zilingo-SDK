@@ -1,5 +1,5 @@
 <?php
-namespace Objects;
+namespace igun997\Objects;
 
 class Zilingo {
 
@@ -58,6 +58,11 @@ class Zilingo {
 		curl_close($ch);
 		$result = json_decode($result, TRUE);
     if (!empty($result)) {
+			if (isset($result["STATUS"])) {
+				if ($result["STATUS"] == "FAILED") {
+					return FALSE;
+				}
+			}
       return $result;
     }
 

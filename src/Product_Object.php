@@ -1,5 +1,5 @@
 <?php
-namespace Objects;
+namespace igun997\Objects;
 /**
  * Product_Object
  */

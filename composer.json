@@ -1,0 +1,17 @@
+{
+    "name": "igun997/zilingo-sdk",
+    "description": "Unofficial SDK for Zilingo",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Indra Gunanda",
+            "email": "indra.gunanda@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {"igun997\\Objects\\": "src/"}
+    },
+    "require": {}
+}
