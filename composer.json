@@ -9,7 +9,6 @@
             "email": "indra.gunanda@gmail.com"
         }
     ],
-    "minimum-stability": "stable",
     "autoload": {
         "psr-4": {"igun997\\Objects\\": "src/"}
     },
