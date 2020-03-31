@@ -36,4 +36,29 @@ class Order_Object
     return $res;
   }
 
+  public function recent(Array $old,Array $range)
+  {
+    $recent = [];
+
+    $count = 0;
+
+    foreach ($this->results as $key => $value) {
+
+      if (!in_array($value["shippableUnitId"],$old)) {
+
+        $createdAt = strtotime($value["createdAt"]);
+
+        if ($createdAt >= $range[0] && $createdAt <= $range[1]) {
+          $recent[] = $value;
+          $count++;
+        }
+
+      }
+
+    }
+
+    $this->totalCount = $count;
+    $this->results = $recent;
+  }
+
 }

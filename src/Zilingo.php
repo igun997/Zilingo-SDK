@@ -86,6 +86,33 @@ class Zilingo {
 
 	}
 
+	public static function stream(Array $old,String $status = "awaitingPickupRequest",String $endTime = null,int $rollBackTime = 1)
+	{
+
+		$req = self::request("/api/v2/orders/byStatus/".$status,NULL);
+
+		$ord = new Order_Object($req);
+
+		// $end = strtotime(date("2020-03-17 23:59:59"));
+
+
+		$end = strtotime(date("Y-m-d 23:59:59"));
+
+		$start = strtotime("-1 day",$end);
+
+
+		if ($endTime != null) {
+
+			$end = strtotime(date("{$endTime} 23:59:59"));
+
+			$start = strtotime("-{$rollBackTime} day",$end);
+
+		}
+
+		$ord->recent($old,[$start,$end]);
+
+		return $ord;
+	}
 
 
 }
